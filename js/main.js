@@ -93,11 +93,15 @@ while ((opcion < 4 ) && (opcion > 0)){
       }
       break;  
     case 3:
-      console.log("Resumen de venta -- TIENDA OFF !!!");
-      for (i = 0; i < venta.length; i ++){
-        console.log("Item " + i + " - " + " Articulo " + venta[i].nombre + " Talle - " + venta[i].talle + " Precio $U " + venta[i].precio);
+      if (venta.length == 0){
+        alert("Usted aun no realizo ninguna compra  cantidad de items. " + venta.length);
+      }else {
+        console.log("Resumen de venta -- TIENDA OFF !!!");
+        for (i = 0; i < venta.length; i ++){
+          console.log("Item " + i + " - " + " Articulo " + venta[i].nombre + " Talle - " + venta[i].talle + " Precio $U " + venta[i].precio);
+        }
+        alert("Precio total $ " + precioTotal + " de un total de " + contador + " compras realizadas");      
       }
-      alert("Precio total $ " + precioTotal + " de un total de " + contador + " compras realizadas");      
       break;
     }
   menu()
