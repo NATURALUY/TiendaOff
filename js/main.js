@@ -64,7 +64,7 @@ let precioTotal=0;
 // Programa ....
 menu()
 opcion = parseInt(prompt("Ingrese la opcion que desea realizar : "));
-while ((opcion < 6 ) && (opcion > 0)){   
+while ((opcion < 4 ) && (opcion > 0)){   
   switch (opcion){
     case 1: 
       for (let i =0 ; i < stock.length ; i++){
