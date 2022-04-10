@@ -1,3 +1,8 @@
+function menu() {
+
+  alert("####### QUE DESEA REALIZAR #### \n - 1) Listar Articulos disponibles \n - 2) Comprar \n - 3) Resumen Venta \n - Otra tecla para salir del sistema")
+
+}
 
 let stock = ["campera", "buzo", "pollera", "reloj" ,"anillo","gorro","sobretodo", "short","bluza","remera", "chaleco", "botas", "camisa", "pantalon", "musculosa" ];
 
@@ -20,7 +25,12 @@ class Articulo {
 }  
 //funcion para crear el articulo
 
+let venta =[];
+
+verStock= ("Desea ver el listado de productos disponibles : SI / NO ")
+
 const venderArticulo =()=> {    
+
     let nombreArticulo = prompt ("Ingrese el nombre del articulo que desea comprar :?");
     nombreArticulo = nombreArticulo.toLowerCase();
     while (!stock.includes(nombreArticulo)){    
@@ -45,28 +55,53 @@ const venderArticulo =()=> {
       precioArticulo= parseInt(prompt(`El monto ingresado incorrecto !!! Ingrese el monto del producto :  ${nombreArticulo}  $ :`));  
     }
     const articulo1 = new Articulo (nombreArticulo,TipoArticulo,talleArticulo, precioArticulo); 
-    return articulo1;
+    
+    return (articulo1);
 }
 let contador =0;
 let precioTotal=0;
 
-let art = venderArticulo();
-let precio = art.calcularPrecio();
-alert("Se vendió el/la " + art.nombre + " al costo : $" + precio); 
-contador = contador +1;
-precioTotal= precioTotal + precio;
-let continuar = prompt("Desea continuar realizando compras ?  SI para continuar / Otra tecla para Finalizar");
-continuar=continuar.toUpperCase();
-
-while (continuar == "SI"){
-  art = venderArticulo();
-  precio = art.calcularPrecio();  
-  alert("Se vendió el/la " + art.nombre + " al costo : $" + precio); 
-  contador = contador +1;
-  precioTotal= precioTotal + precio;
-  continuar = prompt("Desea continuar realizando compras ?  SI para continuar / Otra tecla para Finalizar "); 
-  continuar= continuar.toUpperCase(); 
+// Programa ....
+menu()
+opcion = parseInt(prompt("Ingrese la opcion que desea realizar : "));
+while ((opcion < 6 ) && (opcion > 0)){   
+  switch (opcion){
+    case 1: 
+      for (let i =0 ; i < stock.length ; i++){
+        console.log("item -> " + i + " - " + stock[i]);
+      }
+      break;
+    case 2:    
+      let art = venderArticulo();
+      let precio = art.calcularPrecio();
+      alert("Se vendió el/la " + art.nombre + " al costo : $" + precio); 
+      venta.push(art);
+      contador = contador +1;
+      precioTotal= precioTotal + precio;
+      let continuar = prompt("Desea continuar realizando compras ?  SI para continuar / Otra tecla para Finalizar");
+      continuar=continuar.toUpperCase();
+      
+      while (continuar == "SI"){
+        art = venderArticulo();
+        precio = art.calcularPrecio();  
+        alert("Se vendió el/la " + art.nombre + " al costo : $" + precio); 
+        venta.push(art);
+        contador = contador +1;
+        precioTotal= precioTotal + precio;
+        continuar = prompt("Desea continuar realizando compras ?  SI para continuar / Otra tecla para Finalizar "); 
+        continuar= continuar.toUpperCase(); 
+      }
+      break;  
+    case 3:
+      console.log("Resumen de venta -- TIENDA OFF !!!");
+      for (i = 0; i < venta.length; i ++){
+        console.log("Item " + i + " - " + " Articulo " + venta[i].nombre + " Talle - " + venta[i].talle + " Precio $U " + venta[i].precio);
+      }
+      alert("Precio total $ " + precioTotal + " de un total de " + contador + " compras realizadas");      
+      break;
+    }
+  menu()
+  opcion = parseInt(prompt("Ingrese la opción :"))
 }
-
-alert("Precio total $ " + precioTotal + " de un total de " + contador + " compras realizadas");
 alert("Usted finalizó sus compras");
+      
