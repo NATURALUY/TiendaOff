@@ -1,6 +1,6 @@
 function menu() {
 
-  alert("####### QUE DESEA REALIZAR #### \n - 1) Listar Articulos disponibles \n - 2) Comprar \n - 3) Resumen Venta \n - Otra tecla para salir del sistema")
+  alert("####### QUE DESEA REALIZAR #### \n - 1) Listar Articulos disponibles \n - 2) Comprar Producto \n - 3) Resumen Venta \n - 4) Buscar producto \n - 5) Modificar Compra \n Otra tecla para salir del sistema")
 
 }
 
@@ -61,12 +61,26 @@ const venderArticulo =()=> {
 let contador =0;
 let precioTotal=0;
 
+function listarCompras(){
+if (venta.length == 0){
+  alert("Usted aun no realizo ninguna compra  cantidad de items. " + venta.length);
+}else {
+  console.log("Resumen de venta -- TIENDA OFF !!!");
+  for (i = 0; i < venta.length; i ++){
+    console.log("Item " + i + " - " + " Articulo " + venta[i].nombre + " Talle - " + venta[i].talle + " Precio $U " + venta[i].precio);
+  }
+  alert("Precio total $ " + precioTotal + " de un total de " + contador + " compras realizadas");      
+}
+}
+
 // Programa ....
 menu()
 opcion = parseInt(prompt("Ingrese la opcion que desea realizar : "));
-while ((opcion < 4 ) && (opcion > 0)){   
+while ((opcion < 6 ) && (opcion > 0)){   
   switch (opcion){
     case 1: 
+      stock.sort();
+      console.log("Listado de productos ordenados alfabeticamente")
       for (let i =0 ; i < stock.length ; i++){
         console.log("item -> " + i + " - " + stock[i]);
       }
@@ -93,17 +107,37 @@ while ((opcion < 4 ) && (opcion > 0)){
       }
       break;  
     case 3:
-      if (venta.length == 0){
-        alert("Usted aun no realizo ninguna compra  cantidad de items. " + venta.length);
-      }else {
-        console.log("Resumen de venta -- TIENDA OFF !!!");
-        for (i = 0; i < venta.length; i ++){
-          console.log("Item " + i + " - " + " Articulo " + venta[i].nombre + " Talle - " + venta[i].talle + " Precio $U " + venta[i].precio);
-        }
-        alert("Precio total $ " + precioTotal + " de un total de " + contador + " compras realizadas");      
-      }
+      listarCompras();
       break;
-    }
+    case 4: 
+      let buscar = prompt("Ingrese el producto que desea buscar en stock:");
+      const buscarProducto = stock.find(el => el == buscar);
+      console.log(buscarProducto);
+      if (buscarProducto == buscar){
+        alert(`el siguiente producto ${buscarProducto} se encuentra en stock`);
+
+      }else{
+        alert(`el siguiente producto NO se encuentra en stock`);
+      }
+      break;  
+      case 5: 
+      let cantidadArticulos = venta.length;
+      let eliminar = prompt("Ingrese el producto que desea buscar para eliminar del carrito: ?");
+      const eliminarProducto = venta.findIndex(element => element.nombre === eliminar);
+      if (eliminarProducto !== -1 ){
+        seguir = confirm("Realmente desea borrar el producto seleccionado ? ");
+        precioTotal = precioTotal - venta[eliminarProducto].precio;
+        venta.splice(eliminarProducto, 1);
+        if (venta.length < cantidadArticulos){
+          alert(`Producto ${eliminar} eliminado con exito.....`);
+          contador = contador -1;
+          listarCompras();
+        }  
+      }else {
+        alert("No existe el producto en el carrito")
+      }
+      break;  
+  }      
   menu()
   opcion = parseInt(prompt("Ingrese la opción :"))
 }
