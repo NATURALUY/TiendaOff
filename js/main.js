@@ -4,7 +4,7 @@ function menu() {
 
 }
 
-let stock = ["campera", "buzo", "pollera", "reloj" ,"anillo","gorro","sobretodo", "short","bluza","remera", "chaleco", "botas", "camisa", "pantalon", "musculosa" ];
+let stock = ["campera", "buzo", "pollera", "reloj" ,"anillo","gorro","sobretodo", "short","bluza","remera", "chaleco", "botas", "camisa", "pantalon", "musculosa","cardigan" ];
 
 //clase articulo
 
@@ -76,7 +76,7 @@ if (venta.length == 0){
 // Programa ....
 menu()
 opcion = parseInt(prompt("Ingrese la opcion que desea realizar : "));
-while ((opcion < 6 ) && (opcion > 0)){   
+while ((opcion < 6 ) && (opcion > 1)){   
   switch (opcion){
     case 1: 
       stock.sort();
@@ -142,4 +142,26 @@ while ((opcion < 6 ) && (opcion > 0)){
   opcion = parseInt(prompt("Ingrese la opción :"))
 }
 alert("Usted finalizó sus compras");
-      
+
+
+// muestra stock / crea cards con foto de los elementos
+
+const boton = document.querySelector("#bt");
+let cont = document.getElementById("listar") 
+let nuevo;
+contador = 1;
+
+
+const mostrarStock = () =>{
+for (const prod of stock.sort())  {  
+    nuevo = document.createElement("div");        
+    nuevo.innerHTML="<div class= card style=width: 10rem;><img src=img/"+prod+".jpg class= card-img-top alt=><div><p class= text-danger p-2>"+ prod +"</p></div></div>" 
+    cont.append(nuevo) 
+    contador =contador +1
+    }
+}
+
+boton.addEventListener("click", mostrarStock);
+
+
+
