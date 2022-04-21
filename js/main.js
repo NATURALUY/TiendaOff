@@ -201,3 +201,18 @@ botonBuscar.onclick =(e) => {
   } 
 
   
+// comprar  
+
+const btnComprar = document.getElementById("Comprar")
+
+
+
+btnComprar.onclick = (e) => {
+  let nombre = document.querySelector("#articulo").textContent;
+  let tipo = "DAMA";
+  let talle = document.querySelector("#talle").value
+  let precio = document.querySelector("#precio").textContent
+  const articulo1 = new Articulo (nombre,tipo,talle, precio); 
+  console.log(nombre + tipo + talle + precio);  
+}
+

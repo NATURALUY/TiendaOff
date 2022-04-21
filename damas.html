@@ -39,7 +39,7 @@
               Productos
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Caballero</a></li>
+              <li><a class="dropdown-item" href="caballeros.html">Caballero</a></li>
               <li><a class="dropdown-item" href="damas.html">Dama</a></li>
               <li>
                 <hr class="dropdown-divider">
@@ -52,8 +52,9 @@
           </li>
         </ul>
         <form class="d-flex">
-          <input class="form-control me-2" type="input" placeholder="buscar productos" aria-label="buscar" id = "busqueda">
-          <button class="btn btn-outline-danger" type="submit" id ="btnBuscar">Buscar</button>
+          <input class="form-control me-2" type="input" placeholder="buscar productos" aria-label="buscar"
+            id="busqueda">
+          <button class="btn btn-outline-danger" type="submit" id="btnBuscar">Buscar</button>
         </form>
       </div>
     </div>
@@ -89,37 +90,76 @@
     <!-- Fin de modal. -->
     <div class="container mt-2 p-2">
       <div class="row align-items-center">
-          <div class="col-md-3 col-sm-6">
-              <div class="card card-block p-3">
-                  <img class ="imgP" src="Img/anillo.jpg" alt="anillo">
-                  <h5 class="card-title mt-3 mb-3">Anillo</h5>
-                  <p>Varios diseños</p> 
-                                   
-              </div>                
-          </div>    
-          <div class="col-md-3 col-sm-6">
-              <div class="card card-block p-3">
-                  <img class ="imgP" src="Img/bluza.jpg" alt="bluza">
-                  <h5 class="card-title mt-3 mb-3">Bluza</h5>
-                  <p>Importadas, excelente calidad.</p>                                     
-              </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card card-block p-3">
+            <img class="imgP" src="Img/anillo.jpg" alt="anillo">
+            <h5 class="articulo card-title mt-3 mb-3" id="articulo">Anillo</h5>
+            <p>Varios diseños</p>
+            <div>
+              <p>TALLE</p>
+              <select class=" talle " name="talle" id="talle">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+              </select>
+              <p class=" precio p-3 fw-bold" id="precio">7.200</p>
+              <a href="#" class="btn btn-danger" id="Comprar">Comprar</a>
+            </div>
           </div>
-          <div class="col-md-3 col-sm-6">
-              <div class="card card-block p-3">                    
-                  <img class="imgP" src="img/botas.jpg" alt="botas">
-                  <h5 class="card-title  mt-3 mb-3">Botas</h5>
-                  <p>Todos los talles</p>
-              </div>
-          </div> 
-          <div class="col-md-3 col-sm-6">
-              <div class="card card-block p-3">                    
-                  <img class ="imgP" src="Img/buzo.jpg" alt="buzo">
-                  <h5 class="card-title  mt-3 mb-3">Buzos</h5>
-                  <p>Varios colores</p>
-              </div>
-          </div>              
-      </div>             
-  </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card card-block p-3">
+            <img class="imgP" src="Img/botas.jpeg" alt="botas">
+            <h5 class="articulo card-title mt-3 mb-3" id="articulo">Botas</h5>
+            <p>Varios diseños</p>
+            <div>
+              <p>TALLE</p>
+              <select class="talle " name="talle" id="talle">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+              </select>
+              <p class="precio p-3 fw-bold" id="precio">3.300</p>
+              <a href="#" class="Comprar btn btn-danger" id="Comprar">Comprar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card card-block p-3">
+            <img class="imgP" src="Img/buzo.jpg" alt="buzo">
+            <h5 class="card-title mt-3 mb-3" id="articulo">Buzo</h5>
+            <p>Varios diseños</p>
+            <div>
+              <p>TALLE</p>
+              <select name="talle" id="talle">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+              </select>
+              <p class="p-3 fw-bold" id="precio">1.750 </p>
+              <a href="#" class="btn btn-danger" id="Comprar">Comprar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card card-block p-3">
+            <img class="imgP" src="Img/bluza.jpg" alt="Bluza">
+            <h5 class="card-title mt-3 mb-3">Buzo</h5>
+            <p>Varios diseños</p>
+            <div>
+              <p>TALLE</p>
+              <select name="talle" id="">
+                <option value="S">S</option>
+                <option value="S">M</option>
+                <option value="S">L</option>
+              </select>
+              <p class="p-3 fw-bold">$ 1.250 </p>
+              <a href="#" class="btn btn-danger" id="Comprar">Comprar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   <div class="container mt-2 p-2">
       <div class="row align-items-center">
           <div class="col-md-3 col-sm-6">
