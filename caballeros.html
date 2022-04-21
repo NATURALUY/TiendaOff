@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
   <!-- linnk a css -->
   <link rel="stylesheet" href="estilo/estilo.css">
-  <title>Damas - Tienda OFF !!!</title>
+  <title>Caballeros - Tienda OFF !!!</title>
 </head>
 
 <body>
@@ -40,7 +40,7 @@
               Productos
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Caballero</a></li>
+              <li><a class="dropdown-item" href="caballeros.html">Caballero</a></li>
               <li><a class="dropdown-item" href="damas.html">Dama</a></li>
               <li>
                 <hr class="dropdown-divider">
@@ -53,15 +53,19 @@
           </li>
         </ul>
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="buscar productos" aria-label="buscar">
-          <button class="btn btn-outline-danger" type="submit">Buscar</button>
+          <input class="form-control me-2" type="input" placeholder="buscar productos" aria-label="buscar" id = "busqueda">
+          <button class="btn btn-outline-danger" type="submit" id ="btnBuscar">Buscar</button>
         </form>
       </div>
     </div>
   </nav>
   </div>
+  <div class="container">
+    <div class="row" id="resultadoBusqueda">
+    </div>
+  </div>
   <div class="container-banner bg-light p-3 mx-auto text-center mt-5">
-    <h2 class="text-danger ">TIENDA OFF - <span class="p-2 text-muted"> DAMAS </span></h2>
+    <h2 class="text-danger ">TIENDA OFF - <span class="p-2 text-muted"> CABALLEROS </span></h2>
     <!-- Modal para mostral el listado del stock -->
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-outline-danger mt-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
@@ -90,8 +94,7 @@
               <div class="card card-block p-3">
                   <img class ="imgP" src="Img/anillo.jpg" alt="anillo">
                   <h5 class="card-title mt-3 mb-3">Anillo</h5>
-                  <p>Varios diseños</p> 
-                                   
+                  <p>Varios diseños</p>                                    
               </div>                
           </div>    
           <div class="col-md-3 col-sm-6">
@@ -215,8 +218,8 @@
 </div>
     <!-- Inicio footer -->
     <!-- Footer -->
-    <footer class="text-center text-lg-start bg-light text-muted">
-      <!-- Redes sociales -->
+  <footer class="text-center text-lg-start bg-light text-muted">
+  <!-- Redes sociales -->
       <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
         <div class="me-5 d-none d-lg-block">
           <span>Redes sociales :</span>
@@ -262,7 +265,7 @@
           </div>
       </section>
       <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">©2022 Copyright: By Tienda OFF</div>
-    </footer>
+  </footer>
     <!--  fin Footer -->
     <!-- script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"

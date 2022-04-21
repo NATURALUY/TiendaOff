@@ -3,7 +3,6 @@ function menu() {
   alert("####### QUE DESEA REALIZAR #### \n - 1) Listar Articulos disponibles \n - 2) Comprar Producto \n - 3) Resumen Venta \n - 4) Buscar producto \n - 5) Modificar Compra \n Otra tecla para salir del sistema")
 
 }
-
 let stock = ["campera", "buzo", "pollera", "reloj" ,"anillo","gorro","sobretodo", "short","bluza","remera", "chaleco", "botas", "camisa", "pantalon", "musculosa","cardigan" ];
 
 //clase articulo
@@ -155,7 +154,7 @@ contador = 1;
 const mostrarStock = () =>{
 for (const prod of stock.sort())  {  
     nuevo = document.createElement("div");        
-    nuevo.innerHTML="<div class= card style=width: 10rem;><img src=img/"+prod+".jpg class= card-img-top alt=><div><p class= text-danger p-2>"+ prod +"</p></div></div>" 
+    nuevo.innerHTML="<div class= card style=width: 10rem;><img src=img/"+prod+".jpg class= card-img-top alt=</img><div><p class= text-danger p-2>"+ prod +"</p></div></div>" 
     cont.append(nuevo) 
     contador =contador +1
     }
@@ -164,4 +163,41 @@ for (const prod of stock.sort())  {
 boton.addEventListener("click", mostrarStock);
 
 
+// buscar productos
 
+const botonBuscar = document.querySelector("#btnBuscar"); //boton
+const textoBuscar = document.querySelector("#busqueda"); // input.
+let contBusqueda = document.getElementById("resultadoBusqueda"); // contenedor donde se va alojar el resultado de la busqueda
+let nuevoBusqueda;
+let producto;
+let busquedaOn =false;
+console.log(textoBuscar.value)
+
+//formulario configurar el submit
+
+botonBuscar.onclick =(e) => {       
+    e.preventDefault();
+    if (busquedaOn == false){
+        const x = stock.find(el => el == textoBuscar.value);
+        if (textoBuscar.value == x ) {
+        producto = textoBuscar.value;    
+        nuevoBusqueda = document.createElement("div");
+        nuevoBusqueda.innerHTML="<div class=col-lg-4><h2 class= text-muted>"+ producto+"</h2><p>Los siguientes resultados coinciden con su busqueda.</p><img src=img/"+producto+".jpg class= imgP p-3 card-img-top alt=</img></div>"
+        contBusqueda.append(nuevoBusqueda)
+        busquedaOn = true;
+                   
+      }else {    
+        producto = textoBuscar.value;
+        nuevoBusqueda = document.createElement("div");
+        nuevoBusqueda.innerHTML="<div> <p class= text-danger p-3 > NO EXISTEN PRODUCTOS PARA LA BUSQUEDA SELECCIONADA</p></div>" 
+        contBusqueda.append(nuevoBusqueda);
+        busquedaOn = true;
+
+      }
+  }else   {    
+    document.getElementById("resultadoBusqueda").removeChild(nuevoBusqueda)
+    busquedaOn = false; 
+  }
+  } 
+
+  
