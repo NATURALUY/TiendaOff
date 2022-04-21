@@ -211,7 +211,8 @@ btnComprar.onclick = (e) => {
   let precio = document.querySelector("#precio").textContent  
   const articulo1 = new Articulo (nombre,talle, precio);   
   let precioFinal = articulo1.calcularPrecio();
-  console.log(precioFinal);  
+  console.log(`Selecciono  ${nombre}, el talle es ${talle} y el precio sin iva ${precio}`)
+  console.log(`Precio con iVA ${precioFinal}`);  
   console.log(articulo1.resumenVenta());
 }
 
