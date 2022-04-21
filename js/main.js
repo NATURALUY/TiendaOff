@@ -198,8 +198,7 @@ botonBuscar.onclick =(e) => {
     busquedaOn = false; 
   }
   } 
-
-  
+ 
 // comprar  
 
 const btnComprar = document.getElementById("Comprar")
@@ -214,6 +213,8 @@ btnComprar.onclick = (e) => {
   console.log(`Selecciono  ${nombre}, el talle es ${talle} y el precio sin iva ${precio}`)
   console.log(`Precio con iVA ${precioFinal}`);  
   console.log(articulo1.resumenVenta());
+  venta.push(articulo1);
+  console.log(venta);
 }
 
 
