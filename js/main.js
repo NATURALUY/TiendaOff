@@ -201,21 +201,45 @@ botonBuscar.onclick =(e) => {
  
 // comprar  
 
-const btnComprar = document.getElementById("Comprar")
-venta = [];
 
-btnComprar.onclick = (e) => {
-  let nombre = document.querySelector("#articulo").textContent;
-  let talle = document.querySelector("#talle").value
-  let precio = document.querySelector("#precio").textContent  
-  const articulo1 = new Articulo (nombre,talle, precio);   
-  let precioFinal = articulo1.calcularPrecio();
-  console.log(`Selecciono  ${nombre}, el talle es ${talle} y el precio sin iva ${precio}`)
-  console.log(`Precio con iVA ${precioFinal}`);  
-  console.log(articulo1.resumenVenta());
+
+//const btnComprar = document.getElementById("Comprar")
+// const btnComprar = document.getElementsByClassName('Com')
+
+
+
+// btnComprar.onclick = (e) => {
+//   e.preventDefault;
+//   let nombre = document.querySelector("#articulo").textContent;
+//   let nombre = document.getElementsByClassName("articulo").textContent
+//   //let talle = document.querySelector("#talle").value
+//   let talle = document.getElementsByClassName("talle").value
+//   //let precio = document.querySelector("#precio").textContent 
+//   let precio= getElementsByClassName("precio").textContent
+//   const articulo1 = new Articulo (nombre,talle, precio);   
+//   let precioFinal = articulo1.calcularPrecio();
+//   console.log(`Selecciono  ${nombre}, el talle es ${talle} y el precio sin iva ${precio}`)
+//   console.log(`Precio con iVA ${precioFinal}`);  
+//   //console.log(articulo1.resumenVenta());
+//   venta.push(articulo1);
+//   console.log(venta);
+// }
+
+let btnComprar = document.getElementsByClassName("Com");
+for (let i = 0; i < btnComprar.length; i++){ 
+  btnComprar[i].addEventListener('click', function(e) {
+  let self = e.target;
+  let botonComprar = e.target.parentElement;
+  let nombre = botonComprar.querySelector(".articulo").textContent;
+  let talle = botonComprar.querySelector(".talle").value;
+  let precio = botonComprar.querySelector(".precio").textContent;  
+  const articulo1 = new Articulo (nombre,talle, precio);
   venta.push(articulo1);
-  console.log(venta);
+  console.log(venta)
+  let precioFinal = articulo1.calcularPrecio();
+  console.log(`Selecciono  ${nombre}, el talle es ${talle} y el precio sin iva ${precio}`);
+  console.log(` el precio fina es IVA inc. ${precioFinal}`);
+  console.log(articulo1.resumenVenta())
+})
 }
-
-
 
