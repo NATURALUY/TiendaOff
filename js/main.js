@@ -225,16 +225,19 @@ botonBuscar.onclick =(e) => {
 //   console.log(venta);
 // }
 
+//boton comprar control de evento y agregar el producto al array venta para luego mostrarlo en la seccion detalle compra.
+
+
 let btnComprar = document.getElementsByClassName("Com");
 for (let i = 0; i < btnComprar.length; i++){ 
-  btnComprar[i].addEventListener('click', function(e) {
-  let self = e.target;
+  btnComprar[i].addEventListener('click', function(e) {    
   let botonComprar = e.target.parentElement;
   let nombre = botonComprar.querySelector(".articulo").textContent;
   let talle = botonComprar.querySelector(".talle").value;
   let precio = botonComprar.querySelector(".precio").textContent;  
   const articulo1 = new Articulo (nombre,talle, precio);
-  venta.push(articulo1);
+  venta.push(articulo1);  
+  listarArticulo(venta);
   console.log(venta)
   let precioFinal = articulo1.calcularPrecio();
   console.log(`Selecciono  ${nombre}, el talle es ${talle} y el precio sin iva ${precio}`);
@@ -242,4 +245,34 @@ for (let i = 0; i < btnComprar.length; i++){
   console.log(articulo1.resumenVenta())
 })
 }
+
+function listarArticulo(venta) {
+  let buscarContainer = document.getElementById("resumenCompra");
+  let container = document.createElement("table"); 
+  container.innerHTML = crearTabla(venta)
+  buscarContainer.append(container);
+ 
+}
+function crearTabla (lista){
+  let stringTabla  = "<tr><th>NombreArticulo</th><th>Talle</th><th>Precio</th></tr>"
+    for (let compra of lista){
+      fila =  "<tr><td>"
+      fila += compra.nombre; 
+      fila +=  "</td>"
+
+      fila +=  "<td>"
+      fila += compra.talle;
+      fila += "</td>"
+
+      fila +=  "<td>"
+      fila += compra.precio;
+      fila +=  "</td>"
+
+      fila += "</tr>"
+      stringTabla += fila;
+      console.log(stringTabla)
+    }
+    return  stringTabla;
+}
+
 
