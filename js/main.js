@@ -8,7 +8,8 @@ let stock = ["campera", "buzo", "pollera", "reloj" ,"anillo","gorro","sobretodo"
 //clase articulo
 
 class Articulo {
-    constructor(nombre, talle, precio) {
+    
+  constructor(nombre, talle, precio) {
       this.nombre = nombre;     
       this.talle = talle;
       this.precio = precio;      
@@ -20,127 +21,11 @@ class Articulo {
     resumenVenta () {
       return console.log(`Se vendió un / a ${this.nombre}`)
     }
+      
 }  
 //funcion para crear el articulo
 
 let venta =[];
-
-// verStock= ("Desea ver el listado de productos disponibles : SI / NO ")
-
-// const venderArticulo =()=> {    
-
-//     let nombreArticulo = prompt ("Ingrese el nombre del articulo que desea comprar :?");
-//     nombreArticulo = nombreArticulo.toLowerCase();
-//     while (!stock.includes(nombreArticulo)){    
-//     alert("No Se encuentra el producto en stock");    
-//     nombreArticulo = prompt ("Ingrese el nombre del articulo que desea comprar :?");
-//     nombreArticulo = nombreArticulo.toLowerCase();
-//     }
-//     let TipoArticulo = prompt(" Tipo DAMA / CABALLERO : ? ");    
-//     TipoArticulo = TipoArticulo.toUpperCase();
-//     while ((TipoArticulo !== "DAMA") && (TipoArticulo!== "CABALLERO")){
-//       TipoArticulo = prompt("Usted ingreso un tipo incorrecto!!,  solo acepta las opciones DAMA / CABALLERO : ");   
-//       TipoArticulo = TipoArticulo.toUpperCase();
-//     } 
-//     let talleArticulo= prompt("Ingrese el talle del articulo : ?");
-//     talleArticulo = talleArticulo.toLocaleUpperCase();
-//     while ((talleArticulo !== "S") && (talleArticulo !== "M") && (talleArticulo !=="L")) {
-//       talleArticulo = prompt("Usted ingreso un talle incorrecto!!,  solo acepta S-M-L Ingrese el talle del articulo : ");    
-//       talleArticulo = talleArticulo.toUpperCase();
-//     }    
-//     let precioArticulo= parseInt(prompt(`Ingrese el precio del /la  ${nombreArticulo}  $ :`));  
-//     while (!Number.isInteger(precioArticulo)){
-//       precioArticulo= parseInt(prompt(`El monto ingresado incorrecto !!! Ingrese el monto del producto :  ${nombreArticulo}  $ :`));  
-//     }
-//     const articulo1 = new Articulo (nombreArticulo,TipoArticulo,talleArticulo, precioArticulo); 
-    
-//     return (articulo1);
-// }
-// let contador =0;
-// let precioTotal=0;
-
-// function listarCompras(){
-// if (venta.length == 0){
-//   alert("Usted aun no realizo ninguna compra  cantidad de items. " + venta.length);
-// }else {
-//   console.log("Resumen de venta -- TIENDA OFF !!!");
-//   for (i = 0; i < venta.length; i ++){
-//     console.log("Item " + i + " - " + " Articulo " + venta[i].nombre + " Talle - " + venta[i].talle + " Precio $U " + venta[i].precio);
-//   }
-//   alert("Precio total $ " + precioTotal + " de un total de " + contador + " compras realizadas");      
-// }
-// }
-
-// // Programa ....
-// menu()
-// opcion = parseInt(prompt("Ingrese la opcion que desea realizar : "));
-// while ((opcion < 6 ) && (opcion > 1)){   
-//   switch (opcion){
-//     case 1: 
-//       stock.sort();
-//       console.log("Listado de productos ordenados alfabeticamente")
-//       for (let i =0 ; i < stock.length ; i++){
-//         console.log("item -> " + i + " - " + stock[i]);
-//       }
-//       break;
-//     case 2:    
-//       let art = venderArticulo();
-//       let precio = art.calcularPrecio();
-//       alert("Se vendió el/la " + art.nombre + " al costo : $" + precio); 
-//       venta.push(art);
-//       contador = contador +1;
-//       precioTotal= precioTotal + precio;
-//       let continuar = prompt("Desea continuar realizando compras ?  SI para continuar / Otra tecla para Finalizar");
-//       continuar=continuar.toUpperCase();
-      
-//       while (continuar == "SI"){
-//         art = venderArticulo();
-//         precio = art.calcularPrecio();  
-//         alert("Se vendió el/la " + art.nombre + " al costo : $" + precio); 
-//         venta.push(art);
-//         contador = contador +1;
-//         precioTotal= precioTotal + precio;
-//         continuar = prompt("Desea continuar realizando compras ?  SI para continuar / Otra tecla para Finalizar "); 
-//         continuar= continuar.toUpperCase(); 
-//       }
-//       break;  
-//     case 3:
-//       listarCompras();
-//       break;
-//     case 4: 
-//       let buscar = prompt("Ingrese el producto que desea buscar en stock:");
-//       const buscarProducto = stock.find(el => el == buscar);
-//       console.log(buscarProducto);
-//       if (buscarProducto == buscar){
-//         alert(`el siguiente producto ${buscarProducto} se encuentra en stock`);
-
-//       }else{
-//         alert(`el siguiente producto NO se encuentra en stock`);
-//       }
-//       break;  
-//       case 5: 
-//       let cantidadArticulos = venta.length;
-//       let eliminar = prompt("Ingrese el producto que desea buscar para eliminar del carrito: ?");
-//       const eliminarProducto = venta.findIndex(element => element.nombre === eliminar);
-//       if (eliminarProducto !== -1 ){
-//         seguir = confirm("Realmente desea borrar el producto seleccionado ? ");
-//         precioTotal = precioTotal - venta[eliminarProducto].precio;
-//         venta.splice(eliminarProducto, 1);
-//         if (venta.length < cantidadArticulos){
-//           alert(`Producto ${eliminar} eliminado con exito.....`);
-//           contador = contador -1;
-//           listarCompras();
-//         }  
-//       }else {
-//         alert("No existe el producto en el carrito")
-//       }
-//       break;  
-//   }      
-//   menu()
-//   opcion = parseInt(prompt("Ingrese la opción :"))
-// }
-// alert("Usted finalizó sus compras");
-
 
 // muestra stock / crea cards con foto de los elementos
 
@@ -170,7 +55,7 @@ let contBusqueda = document.getElementById("resultadoBusqueda"); // contenedor d
 let nuevoBusqueda;
 let producto;
 let busquedaOn =false;
-console.log(textoBuscar.value)
+//console.log(textoBuscar.value)
 
 //formulario configurar el submit
 
@@ -198,37 +83,11 @@ botonBuscar.onclick =(e) => {
     busquedaOn = false; 
   }
   } 
- 
-// comprar  
 
-
-
-//const btnComprar = document.getElementById("Comprar")
-// const btnComprar = document.getElementsByClassName('Com')
-
-
-
-// btnComprar.onclick = (e) => {
-//   e.preventDefault;
-//   let nombre = document.querySelector("#articulo").textContent;
-//   let nombre = document.getElementsByClassName("articulo").textContent
-//   //let talle = document.querySelector("#talle").value
-//   let talle = document.getElementsByClassName("talle").value
-//   //let precio = document.querySelector("#precio").textContent 
-//   let precio= getElementsByClassName("precio").textContent
-//   const articulo1 = new Articulo (nombre,talle, precio);   
-//   let precioFinal = articulo1.calcularPrecio();
-//   console.log(`Selecciono  ${nombre}, el talle es ${talle} y el precio sin iva ${precio}`)
-//   console.log(`Precio con iVA ${precioFinal}`);  
-//   //console.log(articulo1.resumenVenta());
-//   venta.push(articulo1);
-//   console.log(venta);
-// }
-
-//boton comprar control de evento y agregar el producto al array venta para luego mostrarlo en la seccion detalle compra.
-
+// evento para comprar productos 
 
 let btnComprar = document.getElementsByClassName("Com");
+
 for (let i = 0; i < btnComprar.length; i++){ 
   btnComprar[i].addEventListener('click', function(e) {    
   let botonComprar = e.target.parentElement;
@@ -236,43 +95,68 @@ for (let i = 0; i < btnComprar.length; i++){
   let talle = botonComprar.querySelector(".talle").value;
   let precio = botonComprar.querySelector(".precio").textContent;  
   const articulo1 = new Articulo (nombre,talle, precio);
-  venta.push(articulo1);  
-  listarArticulo(venta);
-  console.log(venta)
+  venta.push(articulo1);    
+  //console.log(venta)
   let precioFinal = articulo1.calcularPrecio();
-  console.log(`Selecciono  ${nombre}, el talle es ${talle} y el precio sin iva ${precio}`);
-  console.log(` el precio fina es IVA inc. ${precioFinal}`);
-  console.log(articulo1.resumenVenta())
+  // console.log(`Selecciono  ${nombre}, el talle es ${talle} y el precio sin iva ${precio}`);
+  // console.log(` el precio fina es IVA inc. ${precioFinal}`);
+  // console.log(articulo1.resumenVenta());
+  insertarElemento(articulo1);
+  guardarEnLocalStorage(articulo1);
 })
+
 }
 
-function listarArticulo(venta) {
-  let buscarContainer = document.getElementById("resumenCompra");
-  let container = document.createElement("table"); 
-  container.innerHTML = crearTabla(venta)
-  buscarContainer.append(container);
- 
-}
-function crearTabla (lista){
-  let stringTabla  = "<tr><th>NombreArticulo</th><th>Talle</th><th>Precio</th></tr>"
-    for (let compra of lista){
-      fila =  "<tr><td>"
-      fila += compra.nombre; 
-      fila +=  "</td>"
+//Funcion que busca en el html la clase lista-carrito y el body de la tabla para agregar lo que se va comprando
 
-      fila +=  "<td>"
-      fila += compra.talle;
-      fila += "</td>"
+const listaProductos = document.querySelector('#lista-carrito tbody');
 
-      fila +=  "<td>"
-      fila += compra.precio;
-      fila +=  "</td>"
-
-      fila += "</tr>"
-      stringTabla += fila;
-      console.log(stringTabla)
-    }
-    return  stringTabla;
+function insertarElemento(elementos) {
+const row = document.createElement('tr');
+row.innerHTML = `
+<td>${elementos.nombre}</td>
+<td>${elementos.talle}</td>
+<td>${elementos.precio}</td>
+<td><a href="#" class="borrar-producto fas fa-times-circle" data-id=""></a></td>
+`;
+  listaProductos.appendChild(row);
 }
 
 
+
+let borrar = document.getElementsByClassName("borrar-producto");
+console.log(borrar);
+
+for (let i = 0; i < borrar.length; i++){ 
+  borrar[i].addEventListener('click', function(e) {    
+  let eventoBorar =  e.target.parentElement;
+  console.log(eventoBorar);
+  } )
+}
+
+  
+  
+//Local storage guardad y obtener los productos.
+
+function guardarEnLocalStorage(producto) {
+  let productos;
+  //Toma valor de un arreglo con datos del LS
+  productos = obtenerProductosLocalStorage();
+  //Agregar el producto al carrito
+  productos.push(producto); 
+  //Agregamos al LS
+  localStorage.setItem('productos', JSON.stringify(productos));
+}
+
+function obtenerProductosLocalStorage(){
+  let productoLS;
+
+  //Comprobar si hay algo en LS
+  if(localStorage.getItem('productos') === null){
+      productoLS = [];
+  }
+  else {
+      productoLS = JSON.parse(localStorage.getItem('productos'));
+  }
+  return productoLS;
+}

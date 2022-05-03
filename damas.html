@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- link librerias -->
+  <!-- link librerias --> 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
   <!-- linnk a css -->
   <link rel="stylesheet" href="estilo/estilo.css">
@@ -15,8 +14,8 @@
 </head>
 <body>
   <div class="bg-danger text-light text-center p-1">
-    <p class="fw-bold">No te lo pierdas! miles de ofertas en calzados desde $ 950 !!! <button
-        class="btn-light btn-outline-danger btn-sm" type="submit">Ofertas!!</button></p>
+    <p class="fw-bold">No te lo pierdas! miles de ofertas en calzados desde $ 950 !!!
+      <button class="btn-light btn-outline-danger btn-sm " type="submit">Ofertas!!</button></p>
   </div>
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top p-3">
     <div class="container-fluid">
@@ -51,19 +50,43 @@
             <a class="nav-link">Contacto</a>
           </li>
         </ul>
+        <div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"aria-controls="navbarCollapse" aria-expanded="false" aria-label="Togglenavigation"><span
+              class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item dropdown">
+                <img src="img/cart.jpeg" class="nav-link dropdown-toggle img-fluid" height="70px" width="70px" href="#"
+                  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></img>
+                <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                  <table id="lista-carrito" class="table">
+                    <thead>
+                      <tr>
+                        <th>Nombre</th>
+                        <th>Talle</th>
+                        <th>Precio</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                  <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
+                  <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar Compra</a>
+                </div>
+              </li>
+            </ul>
+          </div>        
         <form class="d-flex">
           <input class="form-control me-2" type="input" placeholder="buscar productos" aria-label="buscar"
             id="busqueda">
           <button class="btn btn-outline-danger" type="submit" id="btnBuscar">Buscar</button>
         </form>
-      </div>
-    </div>
+      </div>      
   </nav>
   </div>
   <div class="container">
-    <div class="row" id="resultadoBusqueda">
-    </div>
-  </div>
+    <div class="row" id="resultadoBusqueda"></div>
+  </div> 
   <div class="container-banner bg-light p-3 mx-auto text-center mt-5">
     <h2 class="text-danger ">TIENDA OFF - <span class="p-2 text-muted"> DAMAS </span></h2>
     <!-- Modal para mostral el listado del stock -->
@@ -88,7 +111,7 @@
       </div>
     </div>
     <!-- Fin de modal. -->
-    <div class="container p-3" id="resumenCompra">       
+    <div class="container p-3" id="resumenCompra">
     </div>
     <div class="container mt-2 p-2">
       <div class="row align-items-center">
@@ -104,44 +127,44 @@
                 <option value="M">M</option>
                 <option value="L">L</option>
               </select>
-              <p class="precio p-3 fw-bold" id="precio">7.200</p>              
+              <p class="precio p-3 fw-bold" id="precio">7.200</p>
             </div>
             <a href="#" class="Com btn btn-danger" id="Comprar">Comprar</a>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="card card-block p-3">
-          <img class="imgP" src="Img/botas.jpeg" alt="botas">
-          <h5 class="articulo card-title mt-3 mb-3" id="articulo">Botas</h5>
-          <p>Varios diseños</p>
-          <div>
-            <p>TALLE</p>
-            <select class="talle " name="talle" id="talle">
-              <option value="S">S</option>
-              <option value="M">M</option>
-              <option value="L">L</option>
-            </select>
-            <p class="precio p-3 fw-bold" id="precio">3.300</p>
           </div>
-          <a href="#" class="Com btn btn-danger" id="Comprar">Comprar</a>
-        </div>
         </div>
         <div class="col-md-3 col-sm-6">
-        <div class="card card-block p-3">
-          <img class="imgP" src="Img/buzo.jpg" alt="buzo">
-          <h5 class="articulo card-title mt-3 mb-3" id="articulo">Buzo</h5>
-          <p>Varios diseños</p>
-          <div>
-            <p>TALLE</p>
-            <select class="talle" name="talle" id="talle">
-              <option value="S">S</option>
-              <option value="M">M</option>
-              <option value="L">L</option>
-            </select>
-            <p class="precio p-3 fw-bold" id="precio">1.700 </p>            
+          <div class="card card-block p-3">
+            <img class="imgP" src="Img/botas.jpeg" alt="botas">
+            <h5 class="articulo card-title mt-3 mb-3" id="articulo">Botas</h5>
+            <p>Varios diseños</p>
+            <div>
+              <p>TALLE</p>
+              <select class="talle " name="talle" id="talle">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+              </select>
+              <p class="precio p-3 fw-bold" id="precio">3.300</p>
+            </div>
+            <a href="#" class="Com btn btn-danger" id="Comprar">Comprar</a>
           </div>
-          <a href="#" class="Com btn btn-danger" id="Comprar">Comprar</a>
         </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card card-block p-3">
+            <img class="imgP" src="Img/buzo.jpg" alt="buzo">
+            <h5 class="articulo card-title mt-3 mb-3" id="articulo">Buzo</h5>
+            <p>Varios diseños</p>
+            <div>
+              <p>TALLE</p>
+              <select class="talle" name="talle" id="talle">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+              </select>
+              <p class="precio p-3 fw-bold" id="precio">1.700 </p>
+            </div>
+            <a href="#" class="Com btn btn-danger" id="Comprar">Comprar</a>
+          </div>
         </div>
         <div class="col-md-3 col-sm-6">
           <div class="card card-block p-3">
@@ -152,112 +175,112 @@
               <p>TALLE</p>
               <select class="talle" name="talle" id="">
                 <option value="S">S</option>
-                <option value="S">M</option>
-                <option value="S">L</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
               </select>
-              <p class="precio p-3 fw-bold">$ 1.250 </p>              
+              <p class="precio p-3 fw-bold" id="precio">1.250 </p>
             </div>
-          <a href="#" class="Com btn btn-danger" id="Comprar">Comprar</a>
+            <a href="#" class="Com btn btn-danger" id="Comprar">Comprar</a>
           </div>
         </div>
       </div>
     </div>
-  <div class="container mt-2 p-2">
+    <div class="container mt-2 p-2">
       <div class="row align-items-center">
-          <div class="col-md-3 col-sm-6">
-              <div class="card card-block p-3">
-                  <img class ="imgP" src="Img/camisa.jpg" alt="camisa">
-                  <h5 class="articulo card-title mt-3 mb-3">Camisa</h5>
-                  <p>Varios diseños</p>                    
-              </div>                
-          </div>    
-          <div class="col-md-3 col-sm-6">
-              <div class="card card-block p-3">
-                  <img class ="imgP" src="Img/campera.jpg" alt="campera">
-                  <h5 class="articulo  card-title mt-3 mb-3">Campera</h5>
-                  <p>Importadas, excelente calidad.</p>                                     
-              </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card card-block p-3">
+            <img class="imgP" src="Img/camisa.jpg" alt="camisa">
+            <h5 class="articulo card-title mt-3 mb-3">Camisa</h5>
+            <p>Varios diseños</p>
           </div>
-          <div class="col-md-3 col-sm-6">
-              <div class="card card-block p-3">                    
-                  <img class="imgP" src="img/chaleco.jpg" alt="foto chaleco">
-                  <h5 class="card-title  mt-3 mb-3">Chaleco</h5>
-                  <p>Todos los talles</p>
-              </div>
-          </div> 
-          <div class="col-md-3 col-sm-6">
-              <div class="card card-block p-3">                    
-                  <img class ="imgP" src="Img/gorro.jpg" alt="Foto gorro">
-                  <h5 class="card-title  mt-3 mb-3">Gorro</h5>
-                  <p>Varios colores</p>
-              </div>
-          </div>              
-      </div>             
-  </div>
-  <div class="container mt-2 p-2">
-    <div class="row align-items-center">
-        <div class="col-md-3 col-sm-6">
-            <div class="card card-block p-3">
-                <img class ="imgP" src="Img/reloj.jpg" alt="Foto reloj">
-                <h5 class="card-title mt-3 mb-3">Reloj</h5>
-                <p>Varios diseños</p>                    
-            </div>                
-        </div>    
-        <div class="col-md-3 col-sm-6">
-            <div class="card card-block p-3">
-                <img class ="imgP" src="Img/remera.jpg" alt="remera">
-                <h5 class="card-title mt-3 mb-3">Remera</h5>
-                <p>Importadas, excelente calidad.</p>                                     
-            </div>
         </div>
         <div class="col-md-3 col-sm-6">
-            <div class="card card-block p-3">                    
-                <img class="imgP" src="img/pantalon.jpg" alt="Pantalon">
-                <h5 class="card-title  mt-3 mb-3">Pantalon</h5>
-                <p>Todos los talles</p>
-            </div>
-        </div> 
+          <div class="card card-block p-3">
+            <img class="imgP" src="Img/campera.jpg" alt="campera">
+            <h5 class="articulo  card-title mt-3 mb-3">Campera</h5>
+            <p>Importadas, excelente calidad.</p>
+          </div>
+        </div>
         <div class="col-md-3 col-sm-6">
-            <div class="card card-block p-3">                    
-                <img class ="imgP" src="Img/pollera.jpg" alt="Pollera">
-                <h5 class="card-title  mt-3 mb-3">Pollera</h5>
-                <p>Varios colores</p>
-            </div>
-        </div>              
-    </div>             
-</div>
-<div class="container mt-2 p-2">
-  <div class="row align-items-center">
-      <div class="col-md-3 col-sm-6">
           <div class="card card-block p-3">
-              <img class ="imgP" src="Img/sobretodo.jpg" alt="Sobretodo">
-              <h5 class="card-title mt-3 mb-3">Sobretodo</h5>
-              <p>Varios diseños</p>                    
-          </div>                
-      </div>    
-      <div class="col-md-3 col-sm-6">
-          <div class="card card-block p-3">
-              <img class ="imgP" src="Img/short.jpg" alt="short">
-              <h5 class="card-title mt-3 mb-3">Short</h5>
-              <p>Importadas, excelente calidad.</p>                                     
+            <img class="imgP" src="img/chaleco.jpg" alt="foto chaleco">
+            <h5 class="card-title  mt-3 mb-3">Chaleco</h5>
+            <p>Todos los talles</p>
           </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card card-block p-3">
+            <img class="imgP" src="Img/gorro.jpg" alt="Foto gorro">
+            <h5 class="card-title  mt-3 mb-3">Gorro</h5>
+            <p>Varios colores</p>
+          </div>
+        </div>
       </div>
-      <div class="col-md-3 col-sm-6">
-          <div class="card card-block p-3">                    
-              <img class="imgP" src="img/musculosa.jpg" alt="Musculosa">
-              <h5 class="card-title  mt-3 mb-3">Musculosa</h5>
-              <p>Todos los talles</p>
+    </div>
+    <div class="container mt-2 p-2">
+      <div class="row align-items-center">
+        <div class="col-md-3 col-sm-6">
+          <div class="card card-block p-3">
+            <img class="imgP" src="Img/reloj.jpg" alt="Foto reloj">
+            <h5 class="card-title mt-3 mb-3">Reloj</h5>
+            <p>Varios diseños</p>
           </div>
-      </div> 
-      <div class="col-md-3 col-sm-6">
-          <div class="card card-block p-3">                    
-              <img class ="imgP" src="Img/cardigan.jpg" alt="cardigan">
-              <h5 class="card-title  mt-3 mb-3">Cardigan</h5>
-              <p>Varios colores</p>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card card-block p-3">
+            <img class="imgP" src="Img/remera.jpg" alt="remera">
+            <h5 class="card-title mt-3 mb-3">Remera</h5>
+            <p>Importadas, excelente calidad.</p>
           </div>
-      </div>              
-  </div>             
-</div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card card-block p-3">
+            <img class="imgP" src="img/pantalon.jpg" alt="Pantalon">
+            <h5 class="card-title  mt-3 mb-3">Pantalon</h5>
+            <p>Todos los talles</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card card-block p-3">
+            <img class="imgP" src="Img/pollera.jpg" alt="Pollera">
+            <h5 class="card-title  mt-3 mb-3">Pollera</h5>
+            <p>Varios colores</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-2 p-2">
+      <div class="row align-items-center">
+        <div class="col-md-3 col-sm-6">
+          <div class="card card-block p-3">
+            <img class="imgP" src="Img/sobretodo.jpg" alt="Sobretodo">
+            <h5 class="card-title mt-3 mb-3">Sobretodo</h5>
+            <p>Varios diseños</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card card-block p-3">
+            <img class="imgP" src="Img/short.jpg" alt="short">
+            <h5 class="card-title mt-3 mb-3">Short</h5>
+            <p>Importadas, excelente calidad.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card card-block p-3">
+            <img class="imgP" src="img/musculosa.jpg" alt="Musculosa">
+            <h5 class="card-title  mt-3 mb-3">Musculosa</h5>
+            <p>Todos los talles</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card card-block p-3">
+            <img class="imgP" src="Img/cardigan.jpg" alt="cardigan">
+            <h5 class="card-title  mt-3 mb-3">Cardigan</h5>
+            <p>Varios colores</p>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Inicio footer -->
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-light text-muted">
@@ -308,11 +331,14 @@
       </section>
       <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">©2022 Copyright: By Tienda OFF</div>
     </footer>
-    <!--  fin Footer --> 
+    <!--  fin Footer -->
     <!-- script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-      crossorigin="anonymous"></script>
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+    </script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
     <script src="js/main.js"></script>
     <!-- fin script -->
 </body>
